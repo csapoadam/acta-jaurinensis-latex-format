@@ -27,15 +27,19 @@
 \usepackage[pdftex]{graphics}
 \usepackage{times}
 \usepackage{microtype}
-\usepackage[a5paper, layout=a5paper, paperwidth=148mm, paperheight=210mm, left=15mm, right=15mm]{geometry}
+\usepackage[a4paper, layout=a4paper, paperwidth=210mm, paperheight=297mm, left=25mm, right=25mm, columnsep=12.5mm, columnwidth=73.8mm]{geometry}
 
-\pdfpageheight 210mm
-\pdfpagewidth 148mm
+\usepackage{indentfirst}
+
+\usepackage{float}
+
+\pdfpageheight 297mm
+\pdfpagewidth 210mm
 
 %\textwidth 118mm
 %\evensidemargin -10mm
 %\oddsidemargin -10mm
-\textheight 162mm
+\textheight 229mm
 %\headheight 12pt
 %\topmargin -10mm
 %\headsep 5.8mm
@@ -45,9 +49,12 @@
 \parindent 1em
 
 \usepackage[bf,calcwidth,pagestyles,compact]{titlesec}
-\titleformat{\section}{\large\bfseries}{\thesection.}{12pt}{}
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\Alph{subsubsection}}
+\titleformat{\section}{\center\large\bfseries}{\thesection.}{12pt}{\MakeUppercase}
 \titleformat{\subsection}{\normalsize\bfseries}{\thesubsection.}{10pt}{}
-\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection.}{10pt}{}
+\titleformat{\subsubsection}{\normalsize\itshape}{\thesubsubsection.}{10pt}{}
 
 
 % page setup
@@ -59,9 +66,10 @@
 \setlength{\TPHorizModule}{1mm}
 \setlength{\TPVertModule}{1mm}
 
-\renewcommand{\headrulewidth}{0pt} % remove lines as well
+\renewcommand{\headrulewidth}{0.1pt} % remove lines as well
 \renewcommand{\footrulewidth}{0pt}
 \setlength{\headwidth}{\textwidth}
+\setlength{\headheight}{1cm}
 
 \fancypagestyle{actaemptypage}{%
   \chead{ }%
@@ -82,9 +90,9 @@
 \setenumerate[1]{labelindent=0pt,itemsep=1ex,parsep=0ex,leftmargin=2em}
 \setitemize[1]{labelindent=0pt,itemsep=1ex,parsep=0ex,leftmargin=2em}
 
-\renewenvironment{abstract}{\noindent Abstract:\hfill\begin{minipage}[t]{100mm}}{\end{minipage}}
+\renewenvironment{abstract}{\vspace{0.2cm}\noindent Abstract:\hfill\begin{minipage}[t]{130mm}}{\end{minipage}\vspace{0.4cm}}
 \newcommand{\keywords}[1]{\noindent \emph{Keywords:}\hfill\begin{minipage}[t]{
-100mm}\emph{#1}\end{minipage}}
+130mm}\emph{#1}\end{minipage}\vspace{1cm}}
 
 \usepackage{caption}
 \captionsetup[figure]{labelfont=it,textfont={it},labelsep=period}
@@ -98,8 +106,9 @@
 \newcommand{\actayear}{2013}
 \newcommand{\articlenumber}{III}
 \newcommand{\doinumber}{10.14513/actatechjaur.00\articlenumber}
-\newcommand{\actalogo}{fig/ATJ_logo.png}
-\newcommand{\cc}{fig/cc_by_nc.png}
+\newcommand{\actalogo}{logos/ATJ_logo_blue.png}
+\newcommand{\szelogo}{logos/SZE_logo.png}
+\newcommand{\cc}{logos/cc_by_nc.png}
 
 \newcommand{\actejaset}[7]{
 \def\actavol{#1}
@@ -123,14 +132,15 @@
 
 
 \renewcommand{\maketitle}{
-\begin{textblock}{\textwidth\TPHorizModule}(0,-16.5)
+\begin{textblock}{\textwidth\TPHorizModule}(0,-30.5)
     {\fontfamily{ptm}\selectfont \noindent \footnotesize\itshape
-	\begin{tabularx}{\textwidth}{@{}l@{}l @{\extracolsep{\fill}} r@{}}
-	  \multirow{3}{*}{
-	    \includegraphics[height=10mm]{\actalogo}
-	  } & Acta 			& \actastring \\
-	  & Technica 		& DOI: \href{https://doi.org/\doinumber}{\doinumber} \\
-	  & Jaurinensis 	& CC BY-NC 4.0 \\
+	\begin{tabularx}{\textwidth}{@{}l @{\extracolsep{\fill}} c @{\extracolsep{\fill}} r@{}}
+	  \multirow{4}{*}{
+	    \includegraphics[height=20mm]{\actalogo}
+	  } & & \multirow{4}{*}{\includegraphics[height=20mm]{\szelogo}} \\
+	  & \large{ACTA TECHNICA JAURINENSIS} 			& \\[0.12cm]
+	  & \medium{\actastring} 		&  \\[0.12cm]
+	  & \medium{\href{https://doi.org/\doinumber}{\doinumber}} 	& \\
 	\end{tabularx}
     }
 \end{textblock}
@@ -145,11 +155,9 @@
 \end{large}
 \end{bf}
 \end{center}
-\begin{bf}
 \begin{center}
 \@institute
 \end{center}
-\end{bf}
 }
 
 %--- floating objects settings

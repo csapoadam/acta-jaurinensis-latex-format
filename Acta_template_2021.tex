@@ -1,240 +1,125 @@
-\documentclass[10pt,a5paper]{article}
+\documentclass[10pt,a4paper,twocolumns]{article}
 %==================================================================
 
 \usepackage{acteja}
+
+\usepackage{nidanfloat}
+
 %% \actejaset is for editors only
 %% \actejaset{VOL}{NO}{YEAR}{from}{to}{articlenumber}{headerstring}
 \actejaset{XX}{Y}{20XX}{0}{0}{ZZZ}{A. Author et al.}
 %==================================================================
 
 
-\title{Formal Requirements for the Papers Submitted to the “Acta Technica Jaurinensis” Periodical}
+\title{Formal Requirements for the Papers Submitted to the ``Acta Technica Jaurinensis'' Periodical}
 
-\author{A. Author$^1$$^,$$^*$, B. Author$^1$, C. Author$^2$}
+\author{Firstname Surname$^1$$^,$$^*$, Firstname Surname$^1$, Firstname Surname$^2$}
 
 \institute{
-$^1$Name of the University or Institute, Name of the Department\\
-Address, Postcode, City, Country \\
+$^1$Name of the Department, Name of the University\\
+Address, Zip code Cite, Country \\
 
-$^2$Name of the University or Institute, Name of the Department\\
-Address, Postcode, City, Country \\
+$^2$Name of the Institute\\
+Address, Zip code City, Country \\
 
-$^*$e-mail: corresponding@author.email.address}
+$^*$e-mail: corresponding\_author@email.address}
 
 %  \institute is not a standard element of LaTeX titles, but
 %  helps us to produce the same formatting. Please, use it
 
 \begin{document}
 
+\twocolumn[  
+    \begin{@twocolumnfalse}
+        
 \maketitle
 
 \centerline{\begin{footnotesize}Submitted: Day/Month/Year; Accepted: Day/Month/Year; Published online: Day/Month/Year\end{footnotesize}}
 
 \begin{abstract}
-This paper contains the description of the prescribed format of the papers 
-published in the periodical entitled ``Acta Technica Jaurinensis''. 
-The length of the abstract is between 500-1000 characters including spaces. 
-Avoid using references in the abstract.
+These instructions give you guidelines for preparing manuscripts for the ACTA TECHNICA JAURINENSIS journal. Use this document as a template if you are using Microsoft Word 13 or later. Otherwise, use this document as an instruction set. Define all symbols used in the abstract. Do not cite references in the abstract. The length of the abstract must be at least 150 words and maximum 250 words.
 \end{abstract}
 
-\keywords{desktop publishing; printing; editing (minimum 3, maximum 5)}
+\keywords{Minimum 3 maximum 5 key words or phrases in alphabetical order, separated by semicolons}
+
+     \end{@twocolumnfalse}
+]
 
 %----------------------------------------------------------------------------
 
+
 \section{Introduction}
 
-Applying fixed style files is essential for professional publishing.
-This paper shows how to prepare your manuscript for publishing in Acta Technica
-Jaurinensis using \LaTeX\ document preparation system.
-Note that there is a Word sample document with the same goal. The author should
-decide between \LaTeX\ and Word formats. If the author applies the instructions
-in this paper or the ones written in the Word sample, the overall layout and
-visible apperance of the paper will be the same in both systems, however the
-small typesetting detals will differ slightly.
-Generally, \LaTeX\ handles the complex mathematical formulas better than Word
-and it is better in fine typographical details also, but Word is more widely
-known and produces reasonable output for text and simple formulas.
+Acta Technica Jaurinensis is a peer reviewed scientific journal published by the Széchenyi István University, Győr. It was founded in 2008. The journal is published on terminally. The main scope of Acta Technica Jaurinensis is to provide a publication possibility related to the following topics: vehicle, mechanical engineering and mechatronics; transportation science and logistics; architecture, civil and agricultural engineering; information technology and electrical engineering. We are ready to publish any short original publication, new research result as well as review articles covering broader topics. The subject matter can be theory, methodology, empirical studies and applications.
 
-Acta Technica Jaurinensis is a peer reviewed scientific journal published by 
-Széchenyi István University, Győr. It was founded in 2008. The journal is 
-published on terminally. The main scope of Acta Technica Jaurinensis is to 
-provide a publication possibility related to the following topics: 
-vehicle, mechanical engineering and mechatronics; transportation science and logistics; 
-architecture, civil and agricultural engineering; information technology and 
-electrical engineering. We are ready to publish any short original publication, 
-new research result as well as review articles covering broader topics. 
-The subject matter can be theory, methodology, empirical studies and 
-applications.
-
-Each paper is evaluated in a blind, peer review process. The journal is 
-electronically published and indexed. It is an open access journal, both 
-downloading the published articles and publication is free of charge. 
-The users have the right to read, print, search, download, copy, distribute 
-or link to the full texts of these articles, given that they credit the original
- source, without any alterations or commercial use.
-
-\section{Structure of paper}
-
-\subsection{Preamble}
-
-The style file for Acta Technica Jauriensis is based on standard ``article''
-style. You should start your paper with the following lines:
-\begin{verbatim}
-\documentclass[10pt,a5paper]{article}
-\usepackage{acteja}
-\end{verbatim}
-
-``acteja.sty'' should be on \LaTeX\ path, practically in the same directory as
-the main file of paper.
-
-You have to specify title and author with standard commands and use
-\verb+\institute+ for specifying institute of authors. If a number of authors
-are from the same institute, it is not necessary to duplicate the institute
-field. See the \LaTeX\ source of this document for an illustrative example.
-
-You can include any style file in the preamble assuming that:
-\begin{itemize}
- \item the macro packages do not change page layout, fonts,
- sectioning or other global features,
- \item the resulted document can be translated into PDF,
- \item they are well known standard packages
-  \begin{itemize}
-   \item graphicx,
-   \item pstricks,
-  \end{itemize}
- \item or you include them with the submitted package.
-\end{itemize}
-
-We advise you to use \verb+pdflatex+, but if some of your macro packages are not
-compatible with it, you can use standard \verb+latex+ and \verb+dvipdf+ to
-translate.
-
-\verb+acteja.sty+ sets UTF-8 encoding for accented characters. Please, use
-UTF-8 encoding in your document.
+Each paper is evaluated in a blind peer review process. The journal is electronically published and indexed. It is an open access journal, both downloading the published articles and publication is free of charge. The users have the right to read, print, search, download, copy, distribute or link to the full texts of these articles, given that they credit the original source, without any alterations or commercial use.
 
 
-\subsection{Opening}
+\section{Methods}
 
-After \verb+\begin{document}+ the author must use the following commands and
-environments in this order:
-\begin{enumerate}
- \item \verb+\maketitle+ command (no argument),
- \item \verb+abstract+ environment for abstract,
- \item \verb+\keywords{...}+ command for keywords.
-\end{enumerate}
+The name(s) of the author(s) has/have to be given in the following way: whole first name and whole surname. Please avoid adding the different titles of the author(s). In the header, author names are expected in the ``C. Surname'' format where ``C'' is the initial of the first name. In the case of 2 authors give the names of each author, between the names use "and", over 3 authors give the names of the first authors, then use the expression "et al.".
 
+Do not format anything in the paper, use only predefined styles, and do not add any new style. There is only one exception: tables can only be formatted individually using Microsoft Word’s “format table”.
 
-\subsection{Sections}
+\section{Examples of the elements of a document}
 
-Use standard \verb+\section+ and \verb+\subsection+ for sectioning. Deeper
-levels of sectioning is unneccessary in our papers.
+\subsection{Placing figures and tables in the text}
 
-\subsection{Bibliography}
+In case of placing figures and tables use a Text Box. The text box includes the figure or table and its caption. The text box fitting must be square type in the “wrap text” option. Normally the width of figures and tables must not be wider than 7 cm to fit in a column. If it is necessary to use wider tables or figures, it can be used 15.5 cm wide, but in this case it must be fit to the top or the bottom of the page like Table 2.
 
-Use standard \verb+thebibliography+ environment at the end of document. 
-Ordering of bibliography items should follow the order of citation in the text.  
-At the end of this sample paper we show examples for bibliography entries. 
-If You prefer to use BibTeX to generate the bibliography,
-please refer to the \verb+acteja_with_bib+ LaTeX template, which can be found
-on our website!
+\subsubsection{Placing images, figures in the text}
 
-
-\subsection{References in the text}
-
-The author(s) takes/take the full responsibility for the accuracy of their references. The format of references must be uniform and consistent with the instructions below. All publications cited in the text should be referred to by a number in square brackets (e.g., \cite{article_a}). Concatenation of references (e.g., [1-4]) is not allowed. Note that only one reference belongs to one number. Use “Cite” style for left alignment and automatic numbering. All doi numbers should be represented if available, and use “Shift – Enter” keys for new line break.
-
-The examples of references of papers in English \cite{article_a}, papers in other languages \cite{article_b}, books \cite{book}, book chapters \cite{incollection}, conference proceedings \cite{conference}, theses \cite{phdthesis}, standards \cite{standard}, patents \cite{patent} and online \cite{online} are shown in References. If the page numbering of the journal is not continuous within one year, the article ID should be given instead of the page numbers \cite{article_c}. The doi number and URL must be hyperlinks \cite{article_a} \cite{book} \cite{conference} according to Link style.
-
-In the list of references author names are expected in the "C. Family" format where "C" is the initial of the first name. Till there are 3 authors, give the names of each author \cite{article_b}, over 3 authors give the names of the first 2 authors, then use et al. \cite{article_d}. Provide the complete title of publication (title of paper, book, book chapter, standard, patent). Do not abbreviate journal or conference names, e.g. write "Transactions on Medical Imaging" instead of "Trans Med Imaging".
-
-It is required to include at least 10, up-to-date, relevant English language references.
-
-
-%---------------------------------------------
-
-\section{Standard elements}
-
-\subsection{Graphics}
-
-We recommend  using \verb+pdflatex+. \\
-In this case a \verb+\usepackage[pdftex]{graphicx}+ \\
-must be included in the preamble. With
-this setting, JPG, PNG and PDF files can be included directly.
-
-Standard \LaTeX\ \verb+picture+ environment is an another good solution.
-
-PsTricks macros are also accepted, but it implies that you must
-translate your paper \verb+latex+ or \verb+pslatex+ instead of \verb+pdflatex+,
-which allows only EPS files.
-
-Please, use vector graphics (see Fig. \ref{fig:capacitor}) if possible to 
-realize good quality.
-
-All the figures must be in \verb+figure+ environment. We recommend using
-\verb+[htbp]+ placing parameters and using \verb+width=....\textwidth+ size
-specification. Using \verb+\caption+, \verb+\label+ and centering the image is
-madantory in every figure.
+Insert pictures, images and figures in a separate paragraph. The caption should be numbered manually, according to the pattern shown in
+\textbf{Fig. \ref{fig:figure1label}}. In the text box, the caption name must be full (i.e. Figure 1) but in the text reference, it must be in short form (i.e. Fig. 1). The resolution should be at least $300$ dpi.
 
 \begin{figure}[htbp]
 \begin{center}
-  \includegraphics[width=0.6\textwidth]{fig/capacitor.pdf}
+\includegraphics[width=0.4\textwidth]{fig/slbp-bodies.png}
 \end{center}
-\caption{Simple model of a Capacitor in 3D.}
-\label{fig:capacitor}
-\end{figure}
-
-For example Fig~\ref{fig:simpledyn}. is included using the following commands:
-\begin{verbatim}
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[width=0.6\textwidth]{fig/slbp-bodies.png}
-\end{center}
-\caption{Simple dynamical system.}
-\label{fig:simpledyn}
-\end{figure}
-\end{verbatim}
-
-\begin{figure}[htbp]
-\begin{center}
-  \includegraphics[width=0.6\textwidth]{fig/slbp-bodies.png}
-\end{center}
-\caption{Simple dynamical system.}
-\label{fig:simpledyn}
+\caption{Figure caption.}
+\label{fig:figure1label}
 \end{figure}
 
 
-\subsection{Tables}
+\subsubsection{Tables in the text}
 
-Use standard \verb+tabular+ environment for tables. If possible, avoid
-publishing multipage tables in Acta Technica Jaurinensis, try to reorganize
-them to smaller tables if possible. If not, use \verb+supertabular+ environment.
+The table should be centered, and the relevant caption should be placed above the table (see \textbf{Table \ref{tab:table1label}}). Tables should be as simple as possible. Do not use picture for tables. Do not forget to use table caption style.
 
-Similarly to figures, all tables must be put in \verb+table+ environment
-with \verb+\caption+, \verb+\label+ and centering.
-
-The table should be centred, and the relevant caption should be
-placed above the table (see Table~\ref{table:simulation}.).
-Do not forget to use table caption style.
-
-\subsubsection{An example}
 
 \begin{table}[htbp]
-\centering \caption{Table caption}\label{table:simulation}
-\begin{tabular}{| c | c | c | c |} \hline
- \textbf{\emph{Column A}} &\textbf{\emph{Column B}} & \textbf{\emph{Column C}} & \textbf{Column D} \\ \hline
-  100 \%  	&	50 		&	2		& \textbf{2.24}	   \\ \hline
-  90 \%  	&	38 		&	4		& \textbf{2.05}	   \\ \hline
-  80 \%  	&	34 		&	0		& \textbf{1.94}	   \\ \hline
-  70 \%  	&	20 		&	2		& \textbf{1.75}	   \\ \hline
+\centering \caption{Table caption}\label{tab:table1label}
+\begin{tabular}{c c c} \hline
+ \textbf{\emph{Column A}} &\textbf{\emph{Column B}} & \textbf{\emph{Column C}} \\ \hline
+  100 \%  	&	50 		&	2 \\
+  90 \%  	&	38 		&	4 \\
+  80 \%  	&	34 		&	0 \\
+  70 \%  	&	20 		&	2 \\ \hline
 \end{tabular}
 \end{table}
 
-\noindent After the table and figure caption, \verb+\noindent+ command is used.
+\subsection{Formulas in the text}
 
-\subsection{Equations}
+The following conventions should be taken into account.
 
-Use the standard \LaTeX\ tools for typesetting equations. Labeling of equations
-is neccessary only if you refer the equation in the paper.
+\begin{itemize}
+    \item Formulas and mathematical symbols should be created with an equation/formula editor, and should be numbered manually.
+    \item Do not use picture for equations.
+    \item Formulas should be written in a consistent manner throughout the whole document.
+    \item Do not use the letter x as a sign of multiplication (as it is the sign of the Cartesian product).
+\end{itemize}
+
+\begin{table*}[b]
+\centering \caption{Table caption}\label{tab:table2label}
+\begin{tabular}{c c c c c c c c} \hline
+ \textbf{\emph{Column A}} &\textbf{\emph{Column B}} & \textbf{\emph{Column C}} & \textbf{\emph{Column D}} & \textbf{\emph{Column E}} & \textbf{\emph{Column F}} & \textbf{\emph{Column G}} & \textbf{\emph{Column H}} \\ \hline
+  100 \%  	&	50 		&	2 &	2 &	2 &	2 &	2 &	2 \\
+  90 \%  	&	38 		&	4 &	2 &	2 &	2 &	2 &	2 \\
+  80 \%  	&	34 		&	0 &	2 &	2 &	2 &	2 &	2 \\
+  70 \%  	&	20 		&	2 &	2 &	2 &	2 &	2 &	2 \\ \hline
+\end{tabular}
+\end{table*}
+
+Numbers should have normal (not italic) format in the formula. You can see some examples of equations (\ref{eq:01}) to (\ref{eq:03}).
 
 \begin{equation}\label{eq:01}
   (x+a)^n=\sum_{k=0}^{n} \binom{n}{b} x^{k} a^{n-k}
@@ -244,43 +129,47 @@ is neccessary only if you refer the equation in the paper.
   x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}
 \end{equation}
 
+\begin{equation}\label{eq:03}
+  \cos \alpha + \cos \beta = 2 \cos \frac{1}{2}(\alpha + \beta) \cos \frac{1}{2}(\alpha - \beta)
+\end{equation}
 
+\subsection{References in the text}
 
-\subsection{Other formatting rules}
+The author(s) takes/take the full responsibility for the accuracy of their references. The format of references must be uniform and consistent with the instructions below. All publications cited in the text should be referred to by a number in square brackets (e.g., \cite{article_a}). Concatenation of references (e.g., [1-4]) is not allowed. Note that only one reference belongs to one number. Use “Cite” style for left alignment and automatic numbering. All doi numbers should be represented if available, and use “Shift – Enter” keys for new line break.
 
-The standard way to emphasize text is \verb+\emph{...}+. Never
-use \verb+\textbf{...}+ and \verb+\underline{...}+ in text and use them in
-tables and figures with special care.
+The examples of references of papers in English \cite{article_a}, papers in other languages \cite{article_b}, books \cite{book}, book chapters \cite{incollection}, conference proceedings \cite{conference}, theses \cite{phdthesis}, standards \cite{standard}, patents \cite{patent} and online \cite{online} are shown in References. If the page numbering of the journal is not continuous within one year, the article ID should be given instead of the page numbers \cite{article_c}. The doi number and URL must be hyperlinks \cite{article_a} \cite{book} \cite{conference} according to Link style.
 
-Please, use '\verb+-+', '\verb+--+' and '\verb+---+' consistently as it is
-written is standard \LaTeX\ tutorials.
-
-%--------------------
-\section{Submitting the \protect\LaTeX\ paper}
-
-A paper written in \LaTeX\  usually consists of many files: a main \LaTeX-file,
-figures, possibly special macro packages (see above). All of them must be
-packed into a \verb+zip+ archive for simplicity. The name of this zipped file
-must be composed by the first one or two authors' family names, i.e.
-\verb+Author1Author2.zip+. Please, do not use spaces and accented letters in the
-filenames.
-
-A file, describing the compilation of the paper must be included also. Use
-\verb+COMPILE.TXT+ for this file. This must include the commands which produces
-PDF from the source file. In the most simple case it is only a
-`\verb+pdflatex main.tex+' line, but it can be a 2 or 3 line file if you use
-\verb+latex+, \verb+pslatex+, \verb+dvipdf+ and similar standard latex versions.
-
-Please compile and include the PDF version for reference. The technical staff 
-will set the volume and page numbers and possibly make minor typographical 
-corrections before publishing.
-
-%----------------------------------------------------------------------------
+In the list of references author names are expected in the "C. Family" format where "C" is the initial of the first name. Till there are 3 authors, give the names of each author \cite{article_b}, over 3 authors give the names of the first 2 authors, then use et al. \cite{article_d}. Provide the complete title of publication (title of paper, book, book chapter, standard, patent). Do not abbreviate journal or conference names, e.g. write "Transactions on Medical Imaging" instead of "Trans Med Imaging".
 
 \section*{Acknowledgement}
 The publishing of this paper was supported by XY.
 
+\section*{Author contributions}
+
+\paragraph{A. Author:} Conceptualization, Experiments, Theoretical analysis.
+\paragraph{B. Author:} Finite element modelling, Writing, Review and editing.
+\paragraph{C. Author:} Supervision, Review and editing.
+
+\section*{Disclosure statement}
+The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
+
+\section*{ORCID}
+
+If the authors have ORCID identification, it may be given in this section.
+Firstname Surname http://orcid.org/0000-0000-0000-0000
+Firstname Surname http://orcid.org/0000-0000-0000-0000
+
+
+%%%%%%%%%%%%%%%%%
+
+
+
 %----------------------------------------------------------------------------
+
+
+
+%----------------------------------------------------------------------------
+
 
 \begin{thebibliography}{1}
 
@@ -310,6 +199,7 @@ A.~Kovács, G.~Lencse, Modelling of virtualized servers, in: N.~Herencsár,
   Signal Processing: TSP 2015, Brno University of Technology, Brno, 2015, pp.
   241--245.
 	\newline doi: \begin{footnotesize}\url{https://doi.org/10.1109/TSP.2015.7296260}\end{footnotesize}
+
 
 \bibitem{phdthesis}
 V.~Nagy, Examination and modeling of porosity in polyester twisted fibrous
@@ -342,18 +232,22 @@ M.~Gáspár, Z.~Benkő et al., Reducing water absorption in compostable starch-b
 
 \end{thebibliography}
 
-\begin{table}[ht]
+
+\begin{table}[H]
+
 \begin{minipage}{.15\textwidth}
     \begin{tabular}{*{1}{p{0.15\textwidth}}}
 \includegraphics[height=5.5mm]{\cc}
 \\
 \end{tabular}
 \end{minipage}% 
-\begin{minipage}{.9\textwidth}
-    \begin{tabular}{*{1}{p{0.9\textwidth}}}
+\begin{minipage}{.5\textwidth}
+    \begin{tabular}{*{1}{p{0.5\textwidth}}}
 \footnotesize 
 This article is an open access article distributed under the terms and conditions of the Creative Commons Attribution NonCommercial (\href{https://creativecommons.org/licenses/by-nc/4.0/}{CC BY-NC 4.0}) license. \\
 \end{tabular}
 \end{minipage}%
 \end{table}
+
+
 \end{document}
